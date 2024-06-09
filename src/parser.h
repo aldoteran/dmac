@@ -191,7 +191,8 @@ namespace dmac
                 {
                     /* AT*SEND,<len>,<addr>,<payload>\r\n */
                     request_ = "*SEND";
-                    stream << prefix << "AT" << request_ << "," << msg->payload.length() << "," << (int)msg->destination_address << "," << msg->payload << eol_;
+                    //stream << prefix << "AT" << request_ << "," << msg->payload.length() << "," << (int)msg->destination_address << "," << msg->payload << eol_;
+                    stream << msg->payload << eol_;
                     std::string msg = stream.str();
                     sendSync(msg);
                     break;
